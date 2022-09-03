@@ -1,0 +1,132 @@
+[
+  {
+    "stock": 5,
+    "id": 1,
+    "nombre": "4 estaciones",
+    "categoria": "Nuestra",
+    "desc": "Para todos los dias",
+    "precio": 1200,
+    "tamaño": "estandart",
+    "img": "Assets/4 Estaciones .jpg "
+  },
+  {
+    "stock": 5,
+    "id": 2,
+    "nombre": "5 quesos",
+    "categoria": "Nuestra",
+    "desc": "Para todos los dias",
+    "precio": 1500,
+    "tamaño": "estandart",
+    "img": "Assets/5 quesos.jpg"
+  },
+  {
+    "stock": 5,
+    "id": 3,
+    "nombre": "Barbacoa",
+    "categoria": "Nuestra",
+    "desc": "Para todos los dias",
+    "precio": 1300,
+    "tamaño": "estandart",
+    "img": "Assets/Barbacoa.jpg "
+  },
+  {
+    "stock": 5,
+    "id": 4,
+    "nombre": "Basica Atun",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/basica atun.jpg"
+  },
+  {
+     "stock": 5,
+    "id": 5,
+    "nombre": "Basica bacon",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1400,
+    "tamaño": "estandart",
+    "img": " Assets/basica bacon.jpg"
+  }
+  ,
+  {
+     "stock": 5,
+    "id": 6,
+    "nombre": "Basica frankfurt",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/basica atun.jpg"
+  }
+  ,
+  {
+     "stock": 5,
+    "id": 7,
+    "nombre": "Basica Jamon",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/basica jamon.jpg"
+  }
+  ,
+  {
+     "stock": 5,
+    "id": 8,
+    "nombre": "Carbonara",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1700,
+    "tamaño": "estandart",
+    "img": " Assets/carbonara.jpg"
+  }
+  ,
+  {
+     "stock": 5,
+    "id": 9,
+    "nombre": "Fugazzeta",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/Fugazzeta.jpg"
+  }
+  ,
+  {
+     "stock": 10,
+    "id": 1,
+    "nombre": "hawaiana",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/hawaiana.jpg"
+  }
+  ,
+  {
+     "stock": 11,
+    "id": 1,
+    "nombre": "Mozzarella",
+    "categoria": "De Siempre",
+    "desc": "Para todos los dias",
+    "precio": 1500,
+    "tamaño": "estandart",
+    "img": " Assets/mozzarella.jpg"
+  }
+
+  ,
+  {
+     "stock": 12,
+    "id": 1,
+    "nombre": "Parrillera",
+    "categoria": "Nuestra",
+    "desc": "Para todos los dias",
+    "precio": 1600,
+    "tamaño": "estandart",
+    "img": " Assets/Parrillera.jpg"
+  }
+
+]
+
