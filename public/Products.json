@@ -37,7 +37,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/basica atun.jpg"
+    "img": "Assets/basica atun.jpg"
   },
   {
      "stock": 5,
@@ -47,7 +47,7 @@
     "desc": "Para todos los dias",
     "precio": 1400,
     "tamaño": "estandart",
-    "img": " Assets/basica bacon.jpg"
+    "img": "Assets/basica bacon.jpg"
   }
   ,
   {
@@ -58,7 +58,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/basica atun.jpg"
+    "img": "Assets/basica atun.jpg"
   }
   ,
   {
@@ -69,7 +69,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/basica jamon.jpg"
+    "img": "Assets/basica jamon.jpg"
   }
   ,
   {
@@ -80,7 +80,7 @@
     "desc": "Para todos los dias",
     "precio": 1700,
     "tamaño": "estandart",
-    "img": " Assets/carbonara.jpg"
+    "img": "Assets/carbonara.jpg"
   }
   ,
   {
@@ -91,7 +91,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/Fugazzeta.jpg"
+    "img": "Assets/Fugazzeta.jpg"
   }
   ,
   {
@@ -102,7 +102,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/hawaiana.jpg"
+    "img": "Assets/hawaiana.jpg"
   }
   ,
   {
@@ -113,7 +113,7 @@
     "desc": "Para todos los dias",
     "precio": 1500,
     "tamaño": "estandart",
-    "img": " Assets/mozzarella.jpg"
+    "img": "Assets/mozzarella.jpg"
   }
 
   ,
@@ -125,7 +125,7 @@
     "desc": "Para todos los dias",
     "precio": 1600,
     "tamaño": "estandart",
-    "img": " Assets/Parrillera.jpg"
+    "img": "Assets/Parrillera.jpg"
   }
 
 ]
