@@ -2,22 +2,22 @@
   {
     "stock": 5,
     "id": 1,
-    "nombre": "4 estaciones",
+    "titulo": "4 estaciones",
     "categoria": "Nuestra",
-    "desc": "Para todos los dias",
+    "descripcion": "Para todos los dias",
     "precio": 1200,
     "tamaño": "estandart",
-    "img": "Assets/4 Estaciones .jpg "
+    "imagen": "Assets/4Estaciones.jpg"
   },
   {
     "stock": 5,
     "id": 2,
-    "nombre": "5 quesos",
+    "titulo": "5 quesos",
     "categoria": "Nuestra",
-    "desc": "Para todos los dias",
+    "descripcion": "Para todos los dias",
     "precio": 1500,
     "tamaño": "estandart",
-    "img": "Assets/5 quesos.jpg"
+    "imagen": "Assets/5quesos.jpg"
   },
   {
     "stock": 5,

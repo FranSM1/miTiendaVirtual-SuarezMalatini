@@ -1,46 +1,51 @@
 import React, { useEffect, useState } from "react";
 import "./ListContainer.css";
 import ItemList from "../ItemList/ItemList";
-import Loader from "../Loader";
 import { useParams } from "react-router-dom";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../Firebase/Config.js";
 
 function ListContainer() {
-  const [info, setInfo] = useState();
+  const [products, setProducts] = useState();
+  const [loading, setLoading] = useState(false);
   const { categoryItems } = useParams();
-
   useEffect(() => {
-    setTimeout(
-      () =>
-        fetch("../Products.json")
-          .then((resp) => resp.json())
-          .then((prod) => {
-            if (categoryItems === undefined) {
-              setInfo(prod);
-              console.log("sinCat");
-            } else {
-              const itemCategory = prod.filter((cat) => {
-                return cat.categoria === categoryItems;
-              });
-              setInfo(itemCategory);
-              console.log(itemCategory);
-              console.log("conCat");
-            }
-          }),
-      500
-    );
+    setLoading(true);
+    const productCollection = collection(db, "products");
+
+    if (
+      categoryItems === null ||
+      categoryItems === undefined ||
+      categoryItems === ""
+    ) {
+      getDocs(productCollection).then((snapshot) => {
+        setLoading(false);
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      });
+    } else {
+      const categoria = query(
+        productCollection,
+        where("categoria", "==", categoryItems)
+      );
+      getDocs(categoria).then((snapshot) => {
+        setLoading(false);
+        setProducts(
+          snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }))
+        );
+      });
+    }
   }, [categoryItems]);
 
   return (
     <>
-      {info ? (
-        <div>
-          <ItemList productos={info} />
-        </div>
-      ) : (
-        <div>
-          <Loader />
-        </div>
-      )}
+    <div>
+      <h1>Bienvenido a pizzeria ELTERO</h1>
+    </div>
+    <div className="producto">
+      <ItemList productos={products} />
+    </div>
     </>
   );
 }

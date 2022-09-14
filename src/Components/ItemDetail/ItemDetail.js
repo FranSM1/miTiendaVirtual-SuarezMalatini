@@ -14,9 +14,9 @@ function ItemDetail({ producto }) {
 
   return (
     <div className="Card">
-      <h4>{producto.nombre}</h4>
+      <h4>{producto.titulo}</h4>
       <p>{producto.detalle}</p>
-      <img src={`../${producto.img}`} alt={producto.nombre} width="400px" />
+      <img src={`../${producto.imagen}`} alt={producto.titulo} width="400px" />
       <p>$ {producto.precio}</p>
 
       {cant === 0 ? (

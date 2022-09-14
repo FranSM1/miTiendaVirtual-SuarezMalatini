@@ -1,36 +1,131 @@
-import "./NavBar.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Carrito from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from 'react-router-dom';
+import CartWidget from '../CartWidget/CartWidget';
 
-function NavBar() {
+const pages = ['Pizzas', 'Nosotros', 'Ubicacion'];
+const settings = ['Perfil', 'Logout'];
+
+const ResponsiveAppBar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  let navigate = useNavigate();
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
   return (
-    <Navbar expand="lg" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="">
-          <Link to={"/"}>El Tero</Link>
-        </Navbar.Brand>
-        <Nav className="me-auto">
-          <Link to={"/productos"}>Carta</Link>
-        </Nav>
-        <Nav className="me-auto">
-          <Link to={"/category/Las Nuestras"}>Las Nuestras</Link>
-        </Nav>
-        <Nav className="me-auto">
-          <Link to={"/category/Las De Siempre"}>Las De Siempre</Link>
-        </Nav>
-        <Nav className="me-auto">
-          <Link to={"/category/Clientes"}>Clientes</Link>
-        </Nav>
-        <Nav className="me-auto">
-          <Link to={"/contacto"}>Contacto</Link>
-        </Nav>
-        <Carrito />
-      </Container>
-    </Navbar>
-  );
-}
+    <AppBar position="static">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Button className='mainLogo'
+                onClick={() => navigate(`/`, {replace: true})}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                El Tero
+          </Button>
 
-export default NavBar;
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+            <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={() => navigate(`/category/${page}`, {replace: true})}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <Box className='enlaces' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={() => navigate(`/category/${page}`, {replace: true})}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Sofia Cortes" img="mi-app-cortes\public\Assets\SofiaCortes.jpg" />
+            </IconButton>
+            <Menu
+              sx={{ mt: '45px' }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {settings.map((setting) => (
+                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+            <CartWidget />
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+};
+export default ResponsiveAppBar;

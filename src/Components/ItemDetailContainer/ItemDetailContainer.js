@@ -1,31 +1,34 @@
+import "./ItemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../Firebase/Config.js";
 import Loader from "../Loader";
 
 function ItemDetailContainer() {
-  const [info, setInfo] = useState();
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(false);
   const { idItems } = useParams();
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch("../Products.json")
-        .then((resp) => resp.json())
-        .then((prod) => {
-          setInfo(prod);
-        });
-    }, 500);
+    setLoading(true);
+    const productCollection = doc(db, "products", idItems);
+    getDoc(productCollection).then((snapshot) => {
+      setLoading(false);
+      setProduct(snapshot.data());
+    });
   }, [idItems]);
 
   return (
     <>
-      {info ? (
-        <div>
-          <ItemDetail producto={info[idItems - 1]} />
-        </div>
-      ) : (
+      {loading ? (
         <div>
           <Loader />
+        </div>
+      ) : (
+        <div className="CardProduct">
+          <ItemDetail producto={product} />
         </div>
       )}
     </>
