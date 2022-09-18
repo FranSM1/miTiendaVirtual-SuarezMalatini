@@ -1,9 +1,9 @@
-.lds-dual-ring {
+.loader-eltero {
     display: inline-block;
     width: 80px;
     height: 80px;
   }
-  .lds-dual-ring:after {
+  .loader-eltero:after {
     content: " ";
     display: block;
     width: 64px;
