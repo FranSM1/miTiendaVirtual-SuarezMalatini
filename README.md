@@ -1,6 +1,6 @@
 # Bienvenidos a ElTero
 
-![Animacion](https://github.com/FranSM1/miTiendaVirtual-SuarezMalatini/blob/main/public/Animation.gif
+![Animacion](https://github.com/FranSM1/miTiendaVirtual-SuarezMalatini/blob/main/public/Assets/Animation.gif
 )
 
 
