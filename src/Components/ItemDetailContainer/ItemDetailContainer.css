@@ -1,0 +1,11 @@
+.CardProduct {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+@media (max-width:640px){
+  .CardProduct{
+    display: block;
+    
+  }
+}
